@@ -1,0 +1,7 @@
+.tag.link {
+	text-decoration: none;
+
+	&:hover, &:focus, &:active {
+		text-decoration: underline;
+	}
+}

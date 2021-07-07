@@ -1,0 +1,26 @@
+@import 'styles/general';
+
+.box-columns {
+	display: flex;
+
+	@include mobile {
+		flex-direction: column;
+	}
+
+	@include desktop {
+		& > * {
+			flex-grow: 1;
+			width: 50%;
+		}
+	}
+
+	& > :not(:first-child) {
+		@include desktop {
+			margin-left: 4px;
+		}
+
+		@include mobile {
+			margin-top: 4px;
+		}
+	}
+}

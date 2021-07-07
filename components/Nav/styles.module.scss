@@ -1,0 +1,133 @@
+@import 'styles/general';
+
+nav {
+	display: flex;
+	justify-content: center;
+	font-family: $sans-serif;
+	font-weight: bold;
+	font-size: 9px;
+	line-height: 20px;
+	text-transform: uppercase;
+	flex-wrap: wrap;
+	background-color: #000000;
+	z-index: 10;
+	padding: 0 1ch;
+
+	&.sticky {
+		position: sticky;
+		top: 0;
+	}
+
+	.stick {
+		color: #bbbbbb;
+	}
+
+	.divider {
+		height: 1px;
+		background-color: rgba(128, 128, 128, 0.5);
+		margin: 1px 0;
+	}
+}
+
+$nav-group-colors: (
+	primary: #39d5f6,
+	secondary: #29ff4a,
+	story: #f7f72a,
+	more: #ffb529
+);
+
+#nav-group {
+	@each $id, $color in $nav-group-colors {
+		&-#{$id} .nav-item {
+			color: $color;
+		}
+	}
+}
+
+.nav {
+	&-group {
+		background-color: inherit;
+
+		&:not(:first-child)::before {
+			content: '';
+			display: inline-block;
+			width: 16px;
+			height: 100%;
+			vertical-align: bottom;
+			padding: 0 6px;
+			background-repeat: no-repeat;
+			background-position: center;
+			background-image: url(/images/candy-heart.png);
+		}
+	}
+
+	&-menu {
+		&-container {
+			display: inline-block;
+			background-color: inherit;
+		}
+
+		display: none;
+		position: absolute;
+		z-index: 30;
+		margin-left: -5px;
+		background-color: inherit;
+		flex-direction: column;
+		padding-bottom: 1px;
+
+		&-container:hover & {
+			display: flex;
+			z-index: 31;
+		}
+
+		&-container.force-open & {
+			display: flex;
+		}
+	}
+
+	&-item {
+		display: inline-block;
+		position: relative;
+
+		&:focus {
+			color: #ffffff !important;
+		}
+
+		.nav-menu & {
+			display: flex;
+			padding: 0 10px 0 5px;
+
+			&:hover {
+				background-color: rgba(255, 255, 255, 0.25);
+			}
+		}
+	}
+}
+
+.bubble {
+	display: inline-block;
+	position: absolute;
+	line-height: 14px;
+	padding: 0 3px;
+	color: #ffffff;
+	background-color: #ff0000;
+	border: 1px solid #ffffff;
+
+	// Select bubbles on nav menu labels.
+	.nav-menu-container > .nav-item > & {
+		left: calc(100% - 3px);
+		bottom: calc(100% - 3px);
+	}
+
+	// Select bubbles on labels of open nav menus.
+	.nav-menu-container:hover > .nav-item > &,
+	.nav-menu-container.force-open > .nav-item > & {
+		display: none;
+	}
+
+	// Select bubbles on labels in nav menus.
+	.nav-menu & {
+		align-self: center;
+		left: calc(100% - 5px);
+	}
+}

@@ -1,0 +1,17 @@
+.bb {
+	&-toolbar {
+		margin: 3px 0;
+	}
+
+	&-tool-group {
+		white-space: nowrap;
+
+		&:not(:last-child) {
+			margin-right: 1ch;
+		}
+	}
+
+	&-preview {
+		margin-top: 4px;
+	}
+}

@@ -1,0 +1,35 @@
+.user-field {
+	position: relative;
+
+	&:not(:last-child) {
+		margin-bottom: 2px;
+	}
+
+	&-input {
+		position: relative;
+	}
+
+	&-auto-complete {
+		display: none;
+		min-width: 100%;
+		position: absolute;
+		left: 0;
+		margin-top: -2px;
+		height: auto;
+		padding: 0;
+		white-space: nowrap;
+		z-index: 1;
+
+		.user-field.open-auto-complete > & {
+			display: block;
+		}
+	}
+
+	&-actions {
+		margin-left: 1ch;
+	}
+
+	&-action:not(:first-child) {
+		margin-left: 4px;
+	}
+}

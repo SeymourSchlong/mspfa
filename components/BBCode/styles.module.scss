@@ -1,0 +1,15 @@
+@use 'sass:math';
+
+.bbcode {
+	white-space: pre-wrap;
+	font-size: 0.875em;
+}
+
+.html {
+	white-space: normal;
+}
+
+.chat {
+    border: 1px dashed #808080;
+	padding: #{math.div(15, 14)}em #{math.div(25, 14)}em;
+}

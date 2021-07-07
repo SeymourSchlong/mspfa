@@ -1,0 +1,18 @@
+#messages-actions {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: inherit;
+    margin-top: -12px;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.5);
+
+	nav.sticky ~ * & {
+		top: 20px;
+	}
+}
+
+#no-messages {
+    text-align: center;
+    padding-top: 1em;
+}

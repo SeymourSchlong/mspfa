@@ -1,0 +1,60 @@
+.listing {
+	display: flex;
+
+	&:not(:last-child) {
+		padding-bottom: 8px;
+	}
+
+	&:not(:first-child) {
+		padding-top: 8px;
+	}
+
+	&-icon {
+		&-container {
+			display: inline-block;
+			flex-shrink: 0;
+			margin: 8px 16px 0 0;
+			width: 4em;
+			height: 4em;
+		}
+
+		width: 100%;
+		height: 100%;
+	}
+
+	&-info {
+		flex-grow: 1;
+		text-align: left;
+		overflow: hidden;
+	}
+
+	&-title {
+		display: block;
+		font-size: 1.5em;
+		font-family: Homestuck-Regular;
+		font-weight: normal;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		text-decoration: none;
+		// This prevents the bounding box of the link from filling the entire width of the parent.
+		max-width: fit-content;
+
+		&:hover, &:focus, &:active {
+			text-decoration: underline;
+		}
+	}
+
+	&-section {
+		margin: 4px 0;
+	}
+
+	&-footer {
+		font-size: 0.75em;
+		opacity: 0.6;
+
+		.link:not(:focus, :active) {
+			color: inherit;
+		}
+	}
+}

@@ -1,0 +1,14 @@
+@import 'styles/buttons';
+
+.box {
+	display: flex;
+	flex-direction: column;
+
+	& > :not(:last-child) {
+		margin-bottom: 4px;
+	}
+
+	& > :last-child {
+		flex-grow: 1;
+	}
+}

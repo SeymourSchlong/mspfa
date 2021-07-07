@@ -1,0 +1,42 @@
+@import 'styles/general';
+
+#preload-font {
+	font-family: Homestuck-Regular;
+}
+
+#page {
+	width: 940px;
+	margin: 0 auto;
+
+	@include mobile {
+		width: 100%;
+		overflow: hidden;
+	}
+}
+
+.mspface-container {
+	display: flex;
+}
+
+.mspface {
+	flex-shrink: 0;
+	display: block;
+	width: 208px;
+	height: 102px;
+	margin-right: 4px;
+	background-repeat: no-repeat;
+	background-position: center;
+
+	@include mobile {
+		display: none;
+	}
+}
+
+main.padded {
+	padding: 16px 56px;
+
+	@include mobile {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}

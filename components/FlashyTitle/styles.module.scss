@@ -1,0 +1,24 @@
+@use 'sass:math';
+
+#flashy-title {
+	&-container {
+		$width: 940;
+		$height: 68;
+
+		position: relative;
+		padding-bottom: #{100% * math.div($height, $width)}
+	}
+
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+	background-position: center 0;
+	background-size: cover;
+	background-image: url(/images/flashy-title/template.png);
+	mask-repeat: no-repeat;
+	mask-position: center 0;
+	mask-size: cover;
+	mask-image: url(/images/flashy-title/mask.png);
+}

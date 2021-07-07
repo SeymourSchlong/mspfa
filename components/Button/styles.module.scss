@@ -1,0 +1,78 @@
+@import 'styles/general';
+@import 'styles/buttons';
+@import 'styles/themes';
+
+.button {
+	display: inline-block;
+	box-sizing: content-box;
+	user-select: none;
+	font-family: Homestuck-Regular;
+	font-size: 1.5em;
+	font-weight: normal;
+	border: none;
+	position: relative;
+	padding: 1px 8px;
+	vertical-align: middle;
+	text-decoration: none;
+	flex-shrink: 0;
+	@include styled-button(
+		$front,
+		$color-is-behind-button: true
+	);
+
+	& + &:not(.icon) {
+		margin-left: 1ch;
+	}
+
+	&:enabled {
+		cursor: pointer;
+	}
+
+	&:disabled {
+		opacity: 0.5;
+	}
+
+	&::after {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	&.icon, &.labeled-icon {
+		// Setting `font-size` to `1em` is necessary so that `1ch` measures the current font size correctly.
+		font-size: 1em;
+
+		@include styled-button(
+			$front,
+			$color-is-behind-button: true,
+			$scale: 1,
+			$border: true
+		);
+	}
+
+	&.icon {
+		width: 1em;
+		height: 1em;
+		padding: 1px;
+		background-repeat: no-repeat;
+		background-size: 1em;
+		background-position: 1px;
+	}
+
+	&.labeled-icon {
+		font-family: $monospace;
+		font-weight: bold;
+		padding: 0 3px 0 1px;
+	}
+
+	&.alt {
+		@include styled-button($front-alt, $text-color-alt);
+	}
+
+	&.small {
+		font-size: 1.25em;
+	}
+}

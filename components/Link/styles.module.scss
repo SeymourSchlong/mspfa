@@ -1,0 +1,24 @@
+@import 'styles/themes';
+
+.link {
+	text-decoration: underline;
+	@include theme(color, $link-color);
+
+	&:visited {
+		@include theme(color, $visited-link-color);
+	}
+
+	&:focus, &:active {
+		@include theme(color, $active-link-color);
+	}
+
+	@at-root button#{&} {
+		padding: 0;
+		background: none;
+		border: none;
+		font: inherit;
+		text-transform: inherit;
+		cursor: pointer;
+		text-align: left;
+	}
+}

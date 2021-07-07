@@ -1,0 +1,18 @@
+@import 'styles/general';
+
+#legal {
+	display: flex;
+	padding: 0.35em 2ch;
+	font-size: 12px;
+	justify-content: space-between;
+	flex-direction: row-reverse;
+
+	@include mobile {
+		flex-direction: column;
+		text-align: center;
+	}
+
+	.link {
+		white-space: nowrap;
+	}
+}

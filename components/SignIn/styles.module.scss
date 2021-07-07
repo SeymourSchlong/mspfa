@@ -1,0 +1,62 @@
+#sign-in {
+	&-content {
+		text-align: center;
+	}
+
+	&-divider {
+		margin: 2ch 0;
+	}
+
+	&-methods-external {
+		margin-top: 2ch;
+
+		.theme-dark & {
+			opacity: 0.85;
+		}
+	}
+
+	&-with-password {
+		margin-top: 1.5ch;
+	}
+
+	&-name {
+		width: 100%;
+	}
+}
+
+#sign-up {
+	&-link-container {
+		margin-top: 3ch;
+		font-size: 0.85em;
+	}
+
+	&-email-taken {
+		grid-column: 2;
+		position: relative;
+		margin: 0 1ch;
+		top: -0.5ch;
+		font-size: 0.75em;
+		text-align: center;
+	}
+}
+
+#captcha {
+	margin-top: 2.5ch;
+}
+
+#terms-agreed-container {
+	display: grid;
+	grid-template-columns: auto auto;
+	gap: 1ch;
+	align-items: center;
+	margin-top: 2ch;
+	font-size: 0.85em;
+
+	input {
+		justify-self: right;
+	}
+
+	label {
+		justify-self: left;
+	}
+}

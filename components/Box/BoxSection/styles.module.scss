@@ -1,0 +1,22 @@
+.box {
+	&-section {
+		// It is necessary for box sections to be flexboxes so the box content fills the entire remaining height of the section.
+		display: flex;
+		flex-direction: column;
+
+		@at-root details#{&}:not([open]) {
+			margin-bottom: 0;
+		}
+	}
+
+	&-heading {
+		text-align: center;
+		padding: 0.25em;
+		margin-bottom: 4px;
+	}
+
+	&-content {
+		flex-grow: 1;
+		padding: 24px;
+	}
+}
